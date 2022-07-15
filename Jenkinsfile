@@ -1,6 +1,9 @@
 pipeline{
   agent any
   stages{
+    stage('env'){
+      sh 'printenv'
+
     stage('build'){
       steps{
         sh 'docker build -t anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" .'
