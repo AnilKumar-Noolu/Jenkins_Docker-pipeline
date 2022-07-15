@@ -2,7 +2,13 @@ pipeline{
   agent any
   stages{
     stage('env'){
-      sh 'printenv'
+      steps{
+        sh 'printenv'
+
+      }
+    }
+
+
 
     stage('build'){
       steps{
