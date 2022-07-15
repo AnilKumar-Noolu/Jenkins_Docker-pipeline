@@ -17,8 +17,8 @@ pipeline{
     }
     stage('publish'){
       steps{
-        withDockerRegistry(credentialsId: "dockerhub", url: "")
-        sh 'docker push anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" '
+        withDockerRegistry([credentialsId: "dockerhub", url: ""]){
+        s  sh 'docker push anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" '
       }
     }
   }
