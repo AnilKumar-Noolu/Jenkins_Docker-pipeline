@@ -11,7 +11,7 @@ pipeline{
 
 
     stage('build'){
-      st
+      steps{
         sh 'docker build -t anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" .'
       }
     }
