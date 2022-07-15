@@ -4,7 +4,7 @@ pipeline{
     stage('env'){
       steps{
         sh 'printenv'
-
+        sh 'git version'
       }
     }
 
