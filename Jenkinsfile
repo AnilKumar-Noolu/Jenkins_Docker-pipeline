@@ -11,14 +11,14 @@ pipeline{
 
 
     stage('build'){
-      steps{
+      st
         sh 'docker build -t anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" .'
       }
     }
     stage('publish'){
       steps{
         withDockerRegistry([credentialsId: "dockerhub", url: ""]){
-          sh 'docker rmi anilkumarnooludocker/jenkinsdemo:("$BUILD_ID"-1) '
+
           sh 'docker push anilkumarnooludocker/jenkinsdemo:"$BUILD_ID" '
         }
       }
